@@ -1,0 +1,60 @@
+# rspec
+snippet spechelper
+	require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')${1}
+snippet desc
+	describe ${1:description}" do
+		${2}
+	end
+snippet descd
+	describe ${1:class}, "${2:description}" do
+		before do
+			${3}
+		end
+
+	end
+snippet descc
+	describe ${1:class} do
+		before do
+			${2}
+		end
+
+	end
+snippet descb
+	describe "${1:description}" do
+		before do
+			${2}
+		end
+
+	end
+snippet it
+	it "should ${1:description}" do
+		${2}
+	end
+snippet itsh
+	it "should ${1:description}" do
+		${2:model}.should ${3}
+	end
+snippet itshbe
+	it "should ${1:description}" do
+  		${2:model}.should be_${3}
+	end
+snippet atsh
+	it "should ${1:description}" do
+		${2:model}.${3:attr}.should ${4}
+	end
+snippet atshbe
+	it "should ${1:description}" do
+		${2:model}.${3:attr}.should be_${4}
+	end
+
+# matchers
+snippet sheq
+	should == ${1}
+
+# rspec-rails
+snippet itres
+	it { response.should be_${1} }
+snippet itrend
+	it { response.should render_template(:${1}) }
+snippet itred
+	it { response.should redirect_to(${1}) }

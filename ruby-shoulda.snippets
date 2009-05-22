@@ -1,0 +1,98 @@
+# Shoulda
+
+# macros
+snippet shc
+	should_change "${1:expression}"
+snippet shcb
+	should_change "${1:expression}", :by => ${2:by}
+snippet shcft
+	should_change "${1:expression}", :from => ${2:from}, :to => ${3:to}
+snippet shnotc
+	should_not_change "${1:expression}"
+
+# shoulda validation macros
+snippet shalvf
+	should_allow_values_for :${1:attribute}, ${2}
+snippet should_ensure_length_at_least
+	should_ensure_length_at_least :${1:attribute}, ${2:length}
+snippet should_ensure_length_in_range
+	should_ensure_length_in_range :${1:attribute}, ${2:range}
+snippet should_ensure_length_is
+	should_ensure_length_is :${1:attribute}, ${2:length}
+snippet should_ensure_value_in_range
+	should_ensure_value_in_range :${1:attribute}, ${2:range}
+snippet shnal
+	should_not_allow_values_for :${1:attribute}, ${2:values}
+snippet shvacc
+	should_validate_acceptance_of :${1:attribute}
+snippet shvuniq
+	should_validate_uniqueness_of :${1:attribute}
+snippet shvpre
+	should_validate_presence_of :${1:attribute}
+snippet shvnum
+	should_validate_numericality_of :${1:attribute}
+snippet shhdbc
+	should_have_db_columns :${1:column}
+snippet shhdbi
+	should_have_indices :${1:column}
+snippet shhclm
+	should_have_class_methods :${1:method}
+snippet shhim
+	should_have_instance_methods :${1:method}
+snippet shhns
+	should_have_named_scope :${1:named_scope}, :conditions => {:${2:cond} => ${3:cond_val}}
+snippet shhroa
+	should_have_readonly_attributes :${1:attribute}
+
+# shoulda association macros
+snippet shbt
+	should_belong_to :${1:association}
+snippet shhabtm
+	should_have_and_belong_to_many :${1:association}
+snippet shhm
+	should_have_many :${1:association}
+snippet shho
+	should_have_one :${1:association}
+
+# shoulda controller macros
+snippet shass
+	should_assign_to :${1}
+snippet shnass
+	should_not_assign_to :${1}
+snippet shfl
+	should_set_the_flash_to /${1}/i
+snippet shnfl
+	should_not_set_the_flash ${1}
+snippet shss
+	should_set_session(:${1:key}) { ${2} }
+snippet shflp
+	should_filter_params :${1:password}
+snippet shred
+	should_redirect_to "${1}"
+snippet shrend
+	should_render_template :${1}
+snippet shrewol
+	should_render_without_layout :${1}
+snippet shres
+	should_respond_with :${1:success}
+snippet shroute
+	should_route :${1:method}, "${2:path}", :action => :${3}
+
+# Shoulda view macros
+snippet shreaform
+	should_render_a_form
+snippet shrender_page_with_metadata
+	should_render_page_with_metadata :${1:meta} => ${2:content}
+
+# shoulda contexts
+snippet cont
+	context "${1:description}" do
+		setup do
+			${2}
+		end
+	end
+snippet sh
+	should "${1:description}" do
+		${2}
+	end
+

@@ -1,0 +1,35 @@
+# Factory girl
+
+snippet Fd
+	Factory.define :${1:model} do |factory|
+		factory.${3:attribute} ${4}
+	end
+snippet Fdc
+	Factory.define :${1:obj}, :class => ${2:Class} do |factory|
+		factory.${3:attribute} ${4}
+	end
+snippet bp
+	${1:Model}.blueprint do
+		${2:attribute} { ${3} }
+	end
+snippet Fsq
+	Factory.sequence :${1:attribute} do |n|
+		${2}
+	end
+snippet S
+	Sham.${1:attribute} { Faker::${2:Module}.${3:method} }
+
+snippet F
+	Factory(:${1:factory})${2}
+snippet Fb
+	Factory.build(:${1:factory})${2}
+snippet Fc
+	Factory.create(:${1:factory})
+snippet Fa
+	Factory.attributes_for(:${1:factory})
+snippet Fs
+	Factory.stub(:${1:factory})
+snippet Fw
+	Factory(:${1:factory}, :${2})
+snippet Fbw
+	Factory.build(:${1:factory}, :${2})
