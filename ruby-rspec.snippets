@@ -1,9 +1,16 @@
 # rspec
 snippet spechelper
 	require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')${1}
-snippet desc
+snippet des
 	describe ${1:description}" do
 		${2}
+	end
+snippet desc
+	describe ${1:class} do
+		before do
+			${2}
+		end
+
 	end
 snippet descd
 	describe ${1:class}, "${2:description}" do
@@ -12,19 +19,20 @@ snippet descd
 		end
 
 	end
-snippet descc
-	describe ${1:class} do
-		before do
-			${2}
-		end
-
-	end
-snippet descb
+snippet desd
 	describe "${1:description}" do
 		before do
 			${2}
 		end
 
+	end
+snippet before
+	before(:${1:each}) do
+		${2}
+	end
+snippet after
+	after(:${1:each}) do
+		${2}
 	end
 snippet it
 	it "should ${1:description}" do
@@ -49,7 +57,9 @@ snippet atshbe
 
 # matchers
 snippet sheq
-	should == ${1}
+	${1:targe}.should == ${2}
+snippet shbe
+	${1:target}.should be_${2:result}
 
 # rspec-rails
 snippet itres

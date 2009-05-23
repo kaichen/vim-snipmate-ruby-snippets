@@ -1,0 +1,39 @@
+# ActiveRecord
+
+# associations
+snippet bt
+	belongs_to :${1}
+snippet ho
+	has_one :${1}
+snippet hm
+	has_many :${1}
+snippet habtm
+	has_and_belongs_to_many :${1}
+snippet hmt
+	has_many :${1:association}, :through => ${2}
+
+# validations
+snippet vpo
+	validates_presence_of :${1:attribute}
+snippet vpos
+	validates_presence_of :${1:attribute}, :scope => ${2:scope}
+snippet vuniq
+	validates_uniqueness_of :${1:attribute}
+snippet vuniqs
+	validates_uniqueness_of :${1:attribute}, :scope => ${2:scope}
+snippet vacc
+	validates_acceptance_of :${1:attribute}
+snippet vass
+	validates_associated :${1:association}
+snippet vconfirm
+	validates_confirmation_of :${1:attribute}
+snippet vexclus
+	validates_exclusion_of :${1:attribute}, :in => ${2:range}
+snippet vformat
+	validates_format_of :${1:attribute}, :with => /${2:regex}/i
+snippet vinclus
+	validates_inclusion_of :${1:attribute}, :in => ${2:range}
+snippet vlength
+	validates_length_of :${1:attribute}, ${2}
+snippet vnumeric
+	validates_numericality_of :${1:attribute}
