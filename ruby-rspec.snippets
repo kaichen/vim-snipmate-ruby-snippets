@@ -1,6 +1,8 @@
 # rspec
 snippet spechelper
 	require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')${1}
+
+# describe
 snippet des
 	describe ${1:description}" do
 		${2}
@@ -26,14 +28,18 @@ snippet desd
 		end
 
 	end
-snippet before
+
+# before & after
+snippet before-
 	before(:${1:each}) do
 		${2}
 	end
-snippet after
+snippet after-
 	after(:${1:each}) do
 		${2}
 	end
+
+# it should
 snippet it
 	it "should ${1:description}" do
 		${2}
@@ -46,14 +52,6 @@ snippet itshbe
 	it "should ${1:description}" do
   		${2:model}.should be_${3}
 	end
-snippet atsh
-	it "should ${1:description}" do
-		${2:model}.${3:attr}.should ${4}
-	end
-snippet atshbe
-	it "should ${1:description}" do
-		${2:model}.${3:attr}.should be_${4}
-	end
 
 # matchers
 snippet sheq
@@ -61,10 +59,3 @@ snippet sheq
 snippet shbe
 	${1:target}.should be_${2:result}
 
-# rspec-rails
-snippet itres
-	it { response.should be_${1} }
-snippet itrend
-	it { response.should render_template(:${1}) }
-snippet itred
-	it { response.should redirect_to(${1}) }
