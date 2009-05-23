@@ -3,7 +3,7 @@
 snippet itres
 	it { response.should be_${1} }
 snippet itrend
-	it { response.should render_template(:${1}) }
+	it { response.should render_template(:${1:template}) }
 snippet itred
-	it { response.should redirect_to(${1}) }
+	it { response.should redirect_to(${1:path}) }
 

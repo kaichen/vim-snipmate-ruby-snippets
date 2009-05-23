@@ -2,11 +2,47 @@
 
 # association
 snippet itshbt shoulda macros for rspec: should_belong_to
-	it { should_belong_to :${1:association} }
+	it { should belong_to :${1:association} }
 snippet itshhabtm shoulda macros for rspec: should_have_and_belong_to_many
-	it { should_have_and_belong_to_many :${1:association} }
+	it { should have_and_belong_to_many :${1:association} }
 snippet itshhm shoulda macros for rspec: should_have_many
-	it { should_have_many :${1:association} }
+	it { should have_many :${1:association} }
 snippet itshho shoulda macros for rspec: should_have_one
-	it { should_have_one :${1:association} }
+	it { should have_one :${1:association} }
+
+# validate
+snippet itshvuniq
+	it { should validate_uniqueness_of :${1:attribute} }
+snippet itshvpre
+	it { should validate_presence_of :${1:attribute} }
+snippet itshvacc
+	it { should validate_acceptance_of(:${1:attribute}) }
+snippet itshvnum
+	it { should validate_numericality_of(:${1:attribute}) }
+snippet itshlengthlm
+	it { should ensure_length_of(:${1:attribute}).
+				is_at_least(${2:least}).
+				is_at_most(${3:most}) }
+snippet itshlengthl
+	it { should ensure_length_of(:${1:attribute}).
+				is_at_least(${2:least}) }
+snippet itshlengtheq
+	it { should ensure_length_of(:${1:attribute}).
+				is_equal_to(${2:num}) }
+snippet itshinclusion
+	it { should ensure_inclusion_of(:${1:attribute}).in_range(${2:range}) }
+
+snippet itshhns
+	it { should have_named_scope(:${1:scope}).
+                finding(:conditions => {:${2:cond} => ${3:value}) }
+snippet itshhroa
+	it { should have_readonly_attributes(:${1:attribute}) }
+snippet itshhdbc
+	it { should have_db_column(:${1:column}).of_type(:${2:type}) }
+snippet itshnhdbc
+	it { should_not have_db_column(:${1:column}).of_type(:${2:type}) }
+snippet itshhindex
+	it { should have_index(:${1:index}) }
+snippet itshhindexu
+	it { should have_index(:${1:index}).unique(${2:true}) }
 
